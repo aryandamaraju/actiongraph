@@ -2,7 +2,7 @@
 
 Paste a meeting transcript, get back a checked list of action items: the task, who owns it, when it is due, and the exact quote from the transcript that proves it.
 
-**Live demo:** _link added after deploy_ (free tier, so the first request after a pause can be slow)
+**Live demo:** https://actiongraph.vercel.app (free tier; paste a transcript or use one of the three examples)
 
 This is a small, honest evaluation project. The model call is the easy part. The work is in defining what counts as an action item, labeling 30 meetings by that definition, scoring the output with a script, and showing what a better prompt and a bigger model change.
 
@@ -99,6 +99,12 @@ uvicorn app:app --reload                               # run the demo locally
 ```
 
 `pytest` runs the data checks, the scorer tests, the extractor tests (with a mocked API), and re-scores the saved model outputs in `results/` against floors in `results/floors.json`. GitHub Actions runs the same thing on every push, with no API key.
+
+## Deployment
+
+The demo runs on Vercel's free tier with the Groq free API and `openai/gpt-oss-120b` using the v3 prompt. Settings are environment variables (`LLM_API_KEY`, `LLM_MODEL`, `PROMPT_VERSION`); the key is never in the repo. The endpoint caps transcripts at 12,000 characters and limits each address to 10 requests per 10 minutes to protect the free quota (best effort, per serverless instance). Transcripts are sent to the model API and are not stored by this app. A first request after a quiet period can be slower while the function starts.
+
+Groq retires models regularly (`llama-3.1-8b-instant` and `llama-3.3-70b-versatile` were shut down on 2026-08-16), so the model is a setting, not hard-coded, and this project uses the currently listed `gpt-oss` models.
 
 ## Layout
 
