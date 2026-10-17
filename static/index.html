@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ActionGraph</title>
+<meta name="description" content="Paste a meeting transcript and get a checked list of action items: task, owner, due date, and the exact quote that proves it.">
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1c1b19; --muted: #6b675f; --line: #e3e0d8;
+    --accent: #0f6b5c; --accent-ink: #ffffff; --chip: #e7f1ee; --warn: #9a5b00; --warn-bg: #fbf0dc;
+    --quote: #f1efe8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413; --panel: #1c1c1a; --ink: #efede6; --muted: #a09b90; --line: #2f2e2a;
+      --accent: #4cc2a8; --accent-ink: #0b1d18; --chip: #1f332e; --warn: #f0b457; --warn-bg: #33270f;
+      --quote: #242320;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  textarea { width: 100%; min-height: 220px; resize: vertical; border: 1px solid var(--line); border-radius: 8px;
+    padding: 12px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--bg); color: var(--ink); }
+  textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+  .row .grow { flex: 1; }
+  button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink); padding: 8px 14px; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .55; cursor: wait; }
+  .count { color: var(--muted); font-size: 13px; }
+  #out { margin-top: 24px; }
+  .meta { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+  .item { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+  .task { font-weight: 600; margin: 0 0 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .chip { background: var(--chip); border-radius: 999px; padding: 2px 10px; font-size: 13px; }
+  .chip.none { background: var(--warn-bg); color: var(--warn); }
+  .chip.label { background: transparent; color: var(--muted); padding-left: 0; }
+  blockquote { margin: 0; padding: 8px 12px; background: var(--quote); border-left: 3px solid var(--accent);
+    border-radius: 4px; font-size: 14px; color: var(--muted); }
+  .empty, .err { background: var(--panel); border: 1px dashed var(--line); border-radius: 12px; padding: 18px; color: var(--muted); }
+  .err { border-color: var(--warn); color: var(--warn); }
+  details { margin-top: 12px; }
+  pre { overflow: auto; background: var(--quote); padding: 12px; border-radius: 8px; font-size: 13px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>ActionGraph</h1>
+  <p class="sub">Paste a meeting transcript. Get the action items, who owns each one, when it is due, and the exact quote that proves it.</p>
+
+  <div class="box">
+    <textarea id="t" placeholder="Priya: I'll send the revised timeline to leadership tomorrow.&#10;Marcus: Sure, I can fix the bug by Wednesday." maxlength="12000"></textarea>
+    <div class="row">
+      <span class="count" id="count">0 / 12000</span>
+      <span class="grow"></span>
+      <button data-ex="0">Example 1</button>
+      <button data-ex="1">Example 2</button>
+      <button data-ex="2">Example 3</button>
+      <button class="primary" id="go">Extract action items</button>
+    </div>
+  </div>
+
+  <div id="out" aria-live="polite"></div>
+
+  <footer>
+    A portfolio demo, not a product. The model can miss items or get an owner wrong, so check important results
+    against the transcript. Items whose quote cannot be found in your transcript are removed automatically.
+    <a href="https://github.com/aryandamaraju/actiongraph">Code, test set and measured results</a>.
+    Transcripts are sent to a third-party model API and are not stored by this app. Do not paste confidential meetings.
+  </footer>
+</main>
+
+<script>
+const EXAMPLES = [
+`Maya: Okay, launch review. Where are we on the pricing page?
+Theo: I'll send the final copy to design tomorrow.
+Maya: Great. Should we also add a testimonials section? Maybe later.
+Priyanka: I can build the comparison table by Friday.
+Maya: Perfect. Theo, can you also set up the A/B test?
+Theo: Actually, let's hold off on the test until after launch.
+Maya: Fine. I'll tell the sales team about the new tiers on Monday.`,
+`Jordan: Kickoff with Harbor Freight Systems. Welcome, Lee.
+Lee: Thanks. We need our warehouse data loaded by the end of the month.
+Jordan: Understood. Lee, can you send us the inventory export?
+Lee: I'll get it to you by the 9th.
+Jordan: Sam will build the import pipeline once it arrives.
+Sam: I'll have it running by the 14th.
+Jordan: And I'll schedule a weekly check-in starting next Wednesday.
+Lee: If the export is late, I'll let you know right away.`,
+`Ravi: Quick Friday wrap-up. The release went out on time.
+Elena: Yes, and no incidents. Support tickets are down fifteen percent.
+Ravi: Great. It would be nice to redo the settings page someday.
+Elena: Someday, yes. Nothing urgent.
+Ravi: Then that's it. Have a good weekend.`
+];
+const $ = (id) => document.getElementById(id);
+const t = $("t"), go = $("go"), out = $("out");
+
+function updateCount() { $("count").textContent = t.value.length + " / 12000"; }
+t.addEventListener("input", updateCount);
+document.querySelectorAll("[data-ex]").forEach((b) => b.addEventListener("click", () => {
+  t.value = EXAMPLES[+b.dataset.ex]; updateCount(); out.textContent = "";
+}));
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+function render(data) {
+  out.textContent = "";
+  const m = data.meta || {};
+  const bits = [data.items.length + (data.items.length === 1 ? " action item" : " action items"),
+    m.model, m.latency_s != null ? m.latency_s + "s" : null,
+    m.attempts > 1 ? "repaired after " + (m.attempts - 1) + " retry" : null,
+    m.dropped_ungrounded ? m.dropped_ungrounded + " removed (quote not in transcript)" : null].filter(Boolean);
+  out.appendChild(el("p", "meta", bits.join("  ·  ")));
+  if (!data.items.length) {
+    out.appendChild(el("div", "empty", "No action items found. That is a valid answer: nobody committed to anything specific."));
+  }
+  data.items.forEach((it) => {
+    const card = el("div", "item");
+    card.appendChild(el("p", "task", it.task));
+    const chips = el("div", "chips");
+    chips.appendChild(el("span", "chip label", "Owner"));
+    if (it.owners.length) it.owners.forEach((o) => chips.appendChild(el("span", "chip", o)));
+    else chips.appendChild(el("span", "chip none", "nobody assigned"));
+    chips.appendChild(el("span", "chip label", "Due"));
+    chips.appendChild(el("span", it.due ? "chip" : "chip none", it.due || "no date given"));
+    card.appendChild(chips);
+    card.appendChild(el("blockquote", "", it.evidence));
+    out.appendChild(card);
+  });
+  const d = el("details");
+  d.appendChild(el("summary", "", "Raw JSON"));
+  d.appendChild(el("pre", "", JSON.stringify({ items: data.items }, null, 2)));
+  out.appendChild(d);
+}
+
+go.addEventListener("click", async () => {
+  const text = t.value.trim();
+  if (text.length < 20) { out.textContent = ""; out.appendChild(el("div", "err", "Paste a longer transcript first.")); return; }
+  go.disabled = true; go.textContent = "Reading...";
+  out.textContent = "";
+  try {
+    const r = await fetch("/extract", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ transcript: text }) });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.detail || ("Request failed (" + r.status + ")"));
+    render(data);
+  } catch (e) {
+    out.textContent = ""; out.appendChild(el("div", "err", String(e.message || e)));
+  } finally { go.disabled = false; go.textContent = "Extract action items"; }
+});
+updateCount();
+</script>
+</body>
+</html>

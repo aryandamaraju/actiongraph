@@ -1,0 +1,5 @@
+{
+  "v1_baseline_20b": {"file": "test_v1_openai-gpt-oss-20b.json", "min": {"f1": 0.91, "strict_f1": 0.60}},
+  "v3_20b": {"file": "test_v3_openai-gpt-oss-20b.json", "min": {"f1": 0.95, "strict_f1": 0.86, "grounded_rate": 1.0}},
+  "v3_120b": {"file": "test_v3_openai-gpt-oss-120b.json", "min": {"f1": 0.96, "strict_f1": 0.93, "grounded_rate": 1.0}}
+}

@@ -1,0 +1,904 @@
+{
+ "split": "test",
+ "version": "v1",
+ "model": "openai/gpt-oss-20b",
+ "created": "2026-10-17T22:35:13+00:00",
+ "predictions": {
+  "m11": {
+   "items": [
+    {
+     "task": "Finish search filters",
+     "owners": [
+      "Tomás"
+     ],
+     "due": "Wednesday",
+     "evidence": "Tomás: I'll finish them by Wednesday and open the pull request."
+    },
+    {
+     "task": "Implement CSV import",
+     "owners": [
+      "Chloe"
+     ],
+     "due": "end of the sprint",
+     "evidence": "Chloe: Yes. I'll start tomorrow, and I should have it done by the end of the sprint."
+    },
+    {
+     "task": "Send mockups for notification settings page",
+     "owners": [
+      "Kenji"
+     ],
+     "due": "Tuesday",
+     "evidence": "Kenji: I'll send mockups on Tuesday."
+    },
+    {
+     "task": "Write acceptance criteria for three tickets",
+     "owners": [
+      "Noor"
+     ],
+     "due": "noon",
+     "evidence": "Noor: Yes, by noon."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.52,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 334,
+     "completion_tokens": 213
+    }
+   }
+  },
+  "m12": {
+   "items": [
+    {
+     "task": "Reduce unused seats for analytics tool",
+     "owners": [
+      "Arjun"
+     ],
+     "due": "2026-10-28",
+     "evidence": "\"I can do that. The renewal is November 3rd, so I'll send the reduction request by October 28th.\""
+    },
+    {
+     "task": "Pull license usage report for other five tools",
+     "owners": [
+      "Wen"
+     ],
+     "due": "2026-10-27",
+     "evidence": "\"Yes, I'll have it for you by next Thursday.\""
+    },
+    {
+     "task": "Meet with procurement to consolidate vendors",
+     "owners": [
+      "Arjun",
+      "Wen"
+     ],
+     "due": "2026-10-24",
+     "evidence": "\"We'll book it for the 24th.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.5,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 370,
+     "completion_tokens": 237
+    }
+   }
+  },
+  "m13": {
+   "items": [],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.72,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 321,
+     "completion_tokens": 35
+    }
+   }
+  },
+  "m14": {
+   "items": [
+    {
+     "task": "Order conference banner",
+     "owners": [
+      "Gus"
+     ],
+     "due": "tomorrow",
+     "evidence": "\"Yes, I'll place the order tomorrow.\""
+    },
+    {
+     "task": "Send final logo files",
+     "owners": [
+      "Hana"
+     ],
+     "due": null,
+     "evidence": "\"I'll send them over after lunch.\""
+    },
+    {
+     "task": "Book flights for the team",
+     "owners": [
+      "Gus"
+     ],
+     "due": "next Monday",
+     "evidence": "\"Fine, I'll book the flights by next Monday.\""
+    },
+    {
+     "task": "Reserve hotel block",
+     "owners": [
+      "Fiona"
+     ],
+     "due": "today",
+     "evidence": "\"I'll reserve the hotel block today.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.44,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 336,
+     "completion_tokens": 195
+    }
+   }
+  },
+  "m15": {
+   "items": [
+    {
+     "task": "Submit app store build",
+     "owners": [
+      "Victor"
+     ],
+     "due": "Monday",
+     "evidence": "\"I'll submit the build on Monday\""
+    },
+    {
+     "task": "Update privacy policy",
+     "owners": [
+      "Amara"
+     ],
+     "due": "Wednesday",
+     "evidence": "\"I'll incorporate them and post the new policy by Wednesday.\""
+    },
+    {
+     "task": "Retake support screenshots",
+     "owners": [
+      "Dmitri"
+     ],
+     "due": "Tuesday",
+     "evidence": "\"I'll retake them Tuesday.\""
+    },
+    {
+     "task": "Run support team training session",
+     "owners": [
+      "Amara"
+     ],
+     "due": "2024-10-06",
+     "evidence": "\"I'll run a thirty-minute session for support on the 6th.\""
+    },
+    {
+     "task": "Test crash reporting with forced crash",
+     "owners": [
+      "Victor"
+     ],
+     "due": "2024-10-07",
+     "evidence": "\"I'll test it with a forced crash tomorrow.\""
+    },
+    {
+     "task": "Send final copy to Dmitri",
+     "owners": [
+      "Elise"
+     ],
+     "due": "2024-10-07",
+     "evidence": "\"I'll send it Friday.\""
+    },
+    {
+     "task": "Publish marketing page",
+     "owners": [
+      "Dmitri"
+     ],
+     "due": "2024-10-07",
+     "evidence": "\"Then I can publish the page Monday the 7th.\""
+    },
+    {
+     "task": "Find out about press release",
+     "owners": [
+      "Amara"
+     ],
+     "due": "2024-10-10",
+     "evidence": "\"Amara: Yes, Thursday.\""
+    },
+    {
+     "task": "Write rollback plan",
+     "owners": [
+      "Victor"
+     ],
+     "due": "2024-10-10",
+     "evidence": "\"I'll write it up and share it by Thursday.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.89,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 474,
+     "completion_tokens": 570
+    }
+   }
+  },
+  "m16": {
+   "items": [
+    {
+     "task": "Finish first two competitor battlecards",
+     "owners": [
+      "Sana"
+     ],
+     "due": "Thursday",
+     "evidence": "Sana: I'll finish the first two by Thursday."
+    },
+    {
+     "task": "Send Fairmont case study draft to their comms team",
+     "owners": [
+      "Eli"
+     ],
+     "due": "Friday",
+     "evidence": "Eli: Their comms team wants to review it. I'll send them the draft Friday."
+    },
+    {
+     "task": "Update sales team on positioning changes",
+     "owners": [
+      "Lorenzo"
+     ],
+     "due": "Monday",
+     "evidence": "Lorenzo: I'll update the sales team on the positioning changes on Monday."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.48,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 321,
+     "completion_tokens": 193
+    }
+   }
+  },
+  "m17": {
+   "items": [
+    {
+     "task": "Ask engineering for a firm date on SSO",
+     "owners": [
+      "Brandon"
+     ],
+     "due": "Wednesday",
+     "evidence": "Brandon: By Wednesday."
+    },
+    {
+     "task": "Send security questionnaire",
+     "owners": [
+      "Chen"
+     ],
+     "due": "Friday",
+     "evidence": "Chen: I can fill that out. It usually takes me two days, so I'll send it Friday."
+    },
+    {
+     "task": "Send thank‑you note to client",
+     "owners": [
+      "Ashley"
+     ],
+     "due": "today",
+     "evidence": "Brandon: Yes, you should do that today."
+    },
+    {
+     "task": "Send proposal if client asks",
+     "owners": [
+      "Ashley"
+     ],
+     "due": "within a day if asked",
+     "evidence": "Ashley: If they ask, I'll send one within a day."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.66,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 343,
+     "completion_tokens": 236
+    }
+   }
+  },
+  "m18": {
+   "items": [
+    {
+     "task": "Sign printer lease",
+     "owners": [
+      "Moe"
+     ],
+     "due": "Thursday",
+     "evidence": "Moe: I'll sign it Thursday and scan it back to you."
+    },
+    {
+     "task": "File lease in contracts folder",
+     "owners": [
+      "Jules"
+     ],
+     "due": null,
+     "evidence": "Jules: Perfect. Then I'll file it in the contracts folder."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.53,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 318,
+     "completion_tokens": 125
+    }
+   }
+  },
+  "m19": {
+   "items": [
+    {
+     "task": "Reach out to Acme's new VP",
+     "owners": [
+      "Marco"
+     ],
+     "due": "this week",
+     "evidence": "Marco: I'm going to reach out to their new VP this week."
+    },
+    {
+     "task": "Ask Priya to make the intro",
+     "owners": [
+      "Sasha"
+     ],
+     "due": "today",
+     "evidence": "Sasha: I'll ask Priya to make the intro today."
+    },
+    {
+     "task": "Update account notes",
+     "owners": [
+      "Marco",
+      "Zoe"
+     ],
+     "due": "Friday",
+     "evidence": "Sasha: Marco and Zoe, update your account notes by Friday."
+    },
+    {
+     "task": "Set up calls with Helix renewals",
+     "owners": [
+      "Zoe"
+     ],
+     "due": "Tuesday",
+     "evidence": "Zoe: Yes, I'll book both by Tuesday."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.7,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 330,
+     "completion_tokens": 336
+    }
+   }
+  },
+  "m20": {
+   "items": [
+    {
+     "task": "Prepare cost comparison for Redis vs in-process cache",
+     "owners": [
+      "Tobias"
+     ],
+     "due": "2026-10-24",
+     "evidence": "Tobias: I'll put together a cost comparison for both options."
+    },
+    {
+     "task": "Write short doc on checkout failure mode when cache goes down",
+     "owners": [
+      "Luis"
+     ],
+     "due": "2026-10-27",
+     "evidence": "Luis: Sure. I'll write a short doc and add it to the design page by Friday."
+    },
+    {
+     "task": "Check if current load balancer supports sticky sessions",
+     "owners": [
+      "Luis"
+     ],
+     "due": "2026-10-17",
+     "evidence": "Luis: Yeah, I'll check the config this afternoon."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.42,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 388,
+     "completion_tokens": 182
+    }
+   }
+  },
+  "m21": {
+   "items": [
+    {
+     "task": "Call two references for the product designer candidate",
+     "owners": [
+      "Eduardo"
+     ],
+     "due": "Wednesday",
+     "evidence": "Eduardo: I'll call both by Wednesday."
+    },
+    {
+     "task": "Conduct a thirty‑minute follow‑up call to discuss scope with the candidate",
+     "owners": [
+      "Jin"
+     ],
+     "due": "end of next week",
+     "evidence": "Naomi: Try to have it before the end of next week.\nJin: Okay, I'll aim for that."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.47,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 341,
+     "completion_tokens": 145
+    }
+   }
+  },
+  "m22": {
+   "items": [],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.33,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 301,
+     "completion_tokens": 51
+    }
+   }
+  },
+  "m23": {
+   "items": [
+    {
+     "task": "Fix checkout failure on Safari (Ticket 4412)",
+     "owners": [
+      "Omar"
+     ],
+     "due": "today",
+     "evidence": "\"I'll fix it today and push to staging.\""
+    },
+    {
+     "task": "Add database index for dashboard timeout (Ticket 4418)",
+     "owners": [
+      "Pavel"
+     ],
+     "due": "Friday",
+     "evidence": "\"I'll add the index Friday, but it needs a maintenance window.\""
+    },
+    {
+     "task": "Fix typo on pricing page (Ticket 4421)",
+     "owners": [
+      "Omar"
+     ],
+     "due": null,
+     "evidence": "\"I'll fix it with the Safari fix.\""
+    },
+    {
+     "task": "Close dark mode feature request and link to roadmap (Ticket 4430)",
+     "owners": [
+      "Isla"
+     ],
+     "due": null,
+     "evidence": "\"Pavel: Not a bug. Close it and link to the roadmap. Isla: I'll do that.\""
+    },
+    {
+     "task": "Ask Reyes about maintenance window for dashboard timeout",
+     "owners": [
+      "Pavel"
+     ],
+     "due": null,
+     "evidence": "\"Pavel: Will do, I'll message him now.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.8,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 345,
+     "completion_tokens": 483
+    }
+   }
+  },
+  "m24": {
+   "items": [
+    {
+     "task": "Prepare board deck due on the 3rd",
+     "owners": [
+      "Graham"
+     ],
+     "due": "2026-10-03",
+     "evidence": "Graham: Board deck due on the 3rd."
+    },
+    {
+     "task": "Drop P&L into deck tomorrow",
+     "owners": [
+      "Lila"
+     ],
+     "due": "2026-10-18",
+     "evidence": "Lila: I'll drop the P&L into the deck tomorrow."
+    },
+    {
+     "task": "Align churn definition with Samir on Thursday",
+     "owners": [
+      "Lila",
+      "Samir"
+     ],
+     "due": "2026-10-19",
+     "evidence": "Lila: Samir, let's sit down Thursday and settle it."
+    },
+    {
+     "task": "Update metrics slide after churn alignment",
+     "owners": [
+      "Samir"
+     ],
+     "due": "2026-10-20",
+     "evidence": "Samir: Sure, Friday."
+    },
+    {
+     "task": "Write CEO letter over the weekend",
+     "owners": [
+      "Graham"
+     ],
+     "due": null,
+     "evidence": "Graham: I'll write the CEO letter over the weekend, and I need two customer quotes for it."
+    },
+    {
+     "task": "Send two customer quotes tonight",
+     "owners": [
+      "Lila"
+     ],
+     "due": "2026-10-18",
+     "evidence": "Lila: I have a couple from the last NPS survey. I'll send them to you tonight."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.8,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 347,
+     "completion_tokens": 505
+    }
+   }
+  },
+  "m25": {
+   "items": [
+    {
+     "task": "Confirm desk count for IT docking stations",
+     "owners": [
+      "Corinne"
+     ],
+     "due": "Wednesday",
+     "evidence": "\"Corinne: Forty-two, but I'll confirm with HR and get back to you Wednesday.\""
+    },
+    {
+     "task": "Verify network cabling completion",
+     "owners": [
+      "Hal"
+     ],
+     "due": "11th",
+     "evidence": "\"Hal: Yes, I'll be there on the 11th.\""
+    },
+    {
+     "task": "Plan for old furniture relocation",
+     "owners": [
+      "Corinne",
+      "Hal"
+     ],
+     "due": null,
+     "evidence": "\"Hal: Do we need a plan for the old furniture?\""
+    },
+    {
+     "task": "Coordinate office move date",
+     "owners": [
+      "Corinne"
+     ],
+     "due": "15th",
+     "evidence": "\"Corinne: Office move planning. Move date is the 15th.\""
+    },
+    {
+     "task": "Book movers for office relocation",
+     "owners": [
+      "Corinne"
+     ],
+     "due": null,
+     "evidence": "\"Corinne: Movers are booked. I confirmed that yesterday.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.52,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 363,
+     "completion_tokens": 273
+    }
+   }
+  },
+  "m26": {
+   "items": [
+    {
+     "task": "Write placeholder copy for error states",
+     "owners": [
+      "Orla"
+     ],
+     "due": null,
+     "evidence": "Rohan: I'll message Orla and ask her to prioritize it."
+    },
+    {
+     "task": "Fix toggle component to match spec",
+     "owners": [
+      "Mateus"
+     ],
+     "due": "Monday",
+     "evidence": "Mateus: I'll fix the toggle on Monday."
+    },
+    {
+     "task": "Create ticket for keyboard navigation issue",
+     "owners": [
+      "Kalinda"
+     ],
+     "due": null,
+     "evidence": "Kalinda: I'll write the ticket."
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 1.16,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 342,
+     "completion_tokens": 189
+    }
+   }
+  },
+  "m27": {
+   "items": [
+    {
+     "task": "Send user list in CSV template",
+     "owners": [
+      "Colin"
+     ],
+     "due": "12th",
+     "evidence": "\"I'll get it to you by the 12th.\""
+    },
+    {
+     "task": "Send secure invite for admin credentials for SSO",
+     "owners": [
+      "Ayesha"
+     ],
+     "due": "next week",
+     "evidence": "\"I'll send you a secure invite for that next week.\""
+    },
+    {
+     "task": "Configure workspace",
+     "owners": [
+      "Jamal"
+     ],
+     "due": "15th",
+     "evidence": "\"Yes, I'll configure it by the 15th.\""
+    },
+    {
+     "task": "Schedule weekly check-ins starting next Tuesday",
+     "owners": [
+      "Tessa"
+     ],
+     "due": "next Tuesday",
+     "evidence": "\"I'll schedule weekly check-ins starting next Tuesday.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.53,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 363,
+     "completion_tokens": 224
+    }
+   }
+  },
+  "m28": {
+   "items": [
+    {
+     "task": "Send supplier audit checklist",
+     "owners": [
+      "Brent"
+     ],
+     "due": "Thursday",
+     "evidence": "\"I'll send it out Wednesday. No, sorry, Thursday.\""
+    },
+    {
+     "task": "Prepare audit schedule for six suppliers",
+     "owners": [
+      "Rina"
+     ],
+     "due": "next Friday",
+     "evidence": "\"I'll have it done by, um, next Friday.\""
+    },
+    {
+     "task": "Invite Tamsin from quality to next meeting",
+     "owners": [
+      "Brent"
+     ],
+     "due": null,
+     "evidence": "\"I'll send the invite right now.\""
+    },
+    {
+     "task": "Update risk register",
+     "owners": [
+      "Adaeze"
+     ],
+     "due": "25th",
+     "evidence": "\"I'll update the risk register on the 25th.\""
+    },
+    {
+     "task": "Call suppliers that missed last time",
+     "owners": [
+      "Adaeze"
+     ],
+     "due": "Monday",
+     "evidence": "\"I'll do it myself. Monday.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.5,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 408,
+     "completion_tokens": 260
+    }
+   }
+  },
+  "m29": {
+   "items": [
+    {
+     "task": "Chase missing vendor invoices",
+     "owners": [
+      "Hugo"
+     ],
+     "due": "today",
+     "evidence": "\"I'll chase both vendors today.\""
+    },
+    {
+     "task": "Email Singapore entity again and possibly escalate",
+     "owners": [
+      "Hugo"
+     ],
+     "due": "tomorrow",
+     "evidence": "\"I'll email them again, and if I don't hear back by tomorrow I'll escalate to their controller.\""
+    },
+    {
+     "task": "Run variance report",
+     "owners": [
+      "Ines"
+     ],
+     "due": "Thursday morning",
+     "evidence": "\"I'll run it Thursday morning.\""
+    },
+    {
+     "task": "Review package and send to CFO",
+     "owners": [
+      "Beatrix"
+     ],
+     "due": "Friday noon",
+     "evidence": "\"I'll review the whole package and send it to the CFO by noon Friday.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 0.53,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 351,
+     "completion_tokens": 279
+    }
+   }
+  },
+  "m30": {
+   "items": [
+    {
+     "task": "Send vendor scorecard",
+     "owners": [
+      "Cal"
+     ],
+     "due": "tomorrow",
+     "evidence": "\"I'll send it tomorrow, I promise.\""
+    },
+    {
+     "task": "Review training deck",
+     "owners": [
+      "Yolanda"
+     ],
+     "due": "Wednesday",
+     "evidence": "\"I'll review it by Wednesday.\""
+    },
+    {
+     "task": "Draft customer health summary for board",
+     "owners": [
+      "Cal",
+      "Mei"
+     ],
+     "due": "2024-10-22",
+     "evidence": "\"We'll circulate a draft by the 22nd.\""
+    },
+    {
+     "task": "Cancel Thursday sync",
+     "owners": [
+      "Cal"
+     ],
+     "due": null,
+     "evidence": "\"I'll take it off the calendar.\""
+    }
+   ],
+   "meta": {
+    "model": "openai/gpt-oss-20b",
+    "prompt": "v1",
+    "attempts": 1,
+    "latency_s": 2.16,
+    "dropped_ungrounded": 0,
+    "usage": {
+     "prompt_tokens": 371,
+     "completion_tokens": 247
+    }
+   }
+  }
+ },
+ "errors": {}
+}

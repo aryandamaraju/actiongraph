@@ -1,0 +1,14 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements-dev.txt
+      # Data checks, scorer tests, mocked extractor tests, and a re-score of the saved
+      # model outputs in results/ against the floors in results/floors.json. No API key needed.
+      - run: python -m pytest -q
